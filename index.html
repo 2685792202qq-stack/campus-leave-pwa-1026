@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#3250e6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="校园演示" />
+    <title>校园请假演示</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="./icon.svg" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app" data-active-screen="today">
+      <div class="demo-mark" aria-label="本应用为演示界面">演示</div>
+
+      <section class="screen today-screen is-active" data-screen="today">
+        <header class="today-hero">
+          <div class="campus-line">
+            <h1>长垣烹饪职业技术学院</h1>
+            <svg class="line-icon" aria-hidden="true"><use href="#icon-scan" /></svg>
+          </div>
+          <div class="search-box">
+            <svg aria-hidden="true"><use href="#icon-search" /></svg>
+            <span>搜索应用名称 / 学工号 / 姓名等</span>
+          </div>
+        </header>
+        <main class="today-panel">
+          <div class="quick-grid">
+            <button class="service-item" type="button" data-go="leave-home">
+              <span class="app-icon violet"><svg><use href="#icon-calendar" /></svg></span>
+              <span>请销假</span>
+            </button>
+            <button class="service-item" type="button" data-go="leave-home">
+              <span class="app-icon mint"><svg><use href="#icon-leave" /></svg></span>
+              <span>节假日离返校</span>
+            </button>
+            <button class="service-item" type="button">
+              <span class="app-icon blue"><svg><use href="#icon-suitcase" /></svg></span>
+              <span>返校申请</span>
+            </button>
+            <button class="service-item" type="button">
+              <span class="app-icon cyan"><svg><use href="#icon-card" /></svg></span>
+              <span>查寝</span>
+            </button>
+          </div>
+        </main>
+        <nav class="main-tabs" aria-label="主导航">
+          <button class="is-selected" type="button" data-go="today"><svg><use href="#icon-home" /></svg><span>今日</span></button>
+          <button type="button"><span class="badge">14</span><svg><use href="#icon-message" /></svg><span>讯息</span></button>
+          <button type="button" data-go="services"><svg><use href="#icon-grid" /></svg><span>服务</span></button>
+          <button type="button"><svg><use href="#icon-campus" /></svg><span>校园</span></button>
+          <button type="button" data-go="profile"><svg><use href="#icon-person" /></svg><span>我的</span></button>
+        </nav>
+      </section>
+
+      <section class="screen services-screen" data-screen="services" hidden>
+        <header class="plain-header">
+          <h1>服务中心</h1>
+          <div class="service-search"><svg><use href="#icon-search" /></svg><span>搜索</span></div>
+        </header>
+        <div class="official-note">ⓘ&nbsp; 该板块内容均由学校官方提供</div>
+        <div class="service-switch"><button class="active" type="button">我的服务</button><button type="button">校内服务</button><span>☷</span></div>
+        <div class="service-copy"><span>⇆&nbsp; 切换至全部服务</span><div><h2>我的服务</h2><button type="button">编辑</button></div><p>点击右上角[编辑]进行添加</p></div>
+        <main class="campus-services">
+          <h2>校内服务</h2>
+          <div class="campus-grid">
+            <button class="service-item" type="button"><span class="app-icon cyan"><svg><use href="#icon-card" /></svg></span><span>查寝</span></button>
+            <button class="service-item" type="button"><span class="app-icon yellow"><svg><use href="#icon-notice" /></svg></span><span>辅导员通知</span></button>
+            <button class="service-item" type="button"><span class="app-icon blue"><svg><use href="#icon-suitcase" /></svg></span><span>返校申请</span></button>
+            <button class="service-item" type="button"><span class="app-icon coral"><svg><use href="#icon-id" /></svg></span><span>个人信息</span></button>
+            <button class="service-item" type="button"><span class="app-icon mint"><svg><use href="#icon-leave" /></svg></span><span>节假日离返校学生端</span></button>
+            <button class="service-item" type="button"><span class="app-icon coral"><svg><use href="#icon-sign" /></svg></span><span>签到</span></button>
+            <button class="service-item" type="button"><span class="app-icon activity">FC</span><span>趣活动</span></button>
+            <button class="service-item" type="button" data-go="leave-home"><span class="app-icon violet"><svg><use href="#icon-calendar" /></svg></span><span>请销假</span></button>
+            <button class="service-item" type="button"><span class="app-icon blue"><svg><use href="#icon-dorm" /></svg></span><span>宿管查寝</span></button>
+            <button class="service-item" type="button"><span class="app-icon yellow"><svg><use href="#icon-collect" /></svg></span><span>信息收集</span></button>
+          </div>
+        </main>
+        <nav class="main-tabs" aria-label="主导航">
+          <button type="button" data-go="today"><svg><use href="#icon-home" /></svg><span>今日</span></button>
+          <button type="button"><span class="badge">14</span><svg><use href="#icon-message" /></svg><span>讯息</span></button>
+          <button class="is-selected" type="button" data-go="services"><svg><use href="#icon-grid" /></svg><span>服务</span></button>
+          <button type="button"><svg><use href="#icon-campus" /></svg><span>校园</span></button>
+          <button type="button" data-go="profile"><svg><use href="#icon-person" /></svg><span>我的</span></button>
+        </nav>
+      </section>
+
+      <section class="screen profile-screen" data-screen="profile" hidden>
+        <main class="profile-body">
+          <section class="profile-identity">
+            <div class="profile-avatar" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="23" r="10" fill="#efc49f" stroke="none"/><path d="M21 21c1-9 21-11 22 1-4-3-7-4-11-4-3 0-7 1-11 3Z" fill="#2d3442" stroke="none"/><path d="M17 59c1-15 9-22 15-22s14 7 15 22Z" fill="#293b86" stroke="none"/><path d="m25 38 7 9 7-9 4 4-11 11-11-11Z" fill="#f19b4b" stroke="none"/></svg><span>学生</span></div>
+            <div class="profile-copy">
+              <div><strong data-field="name"></strong><b data-field="studentId"></b></div>
+              <p data-profile-summary></p>
+            </div>
+            <div class="profile-tools"><svg><use href="#icon-qr" /></svg><svg><use href="#icon-hex" /></svg></div>
+          </section>
+
+          <section class="status-card">
+            <h2>我的状态</h2>
+            <div>＋&nbsp; 状态</div>
+            <span class="status-figure" aria-hidden="true">👨🏻‍💻🪴</span>
+          </section>
+
+          <section class="profile-section">
+            <h2>应用</h2>
+            <div class="profile-list"><button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">扫一扫<span>›</span></button></div>
+          </section>
+
+          <section class="profile-section">
+            <h2>大学圈</h2>
+            <div class="profile-list">
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">个人主页<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">大学圈记录<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">互动消息<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">话题管理<span>›</span></button>
+            </div>
+          </section>
+
+          <section class="profile-section">
+            <h2>设置反馈</h2>
+            <div class="profile-list">
+              <button type="button" data-go="profile-editor">个人资料<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">消息通知<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">通用设置<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">分享应用<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="测试版不会清除本机资料">清除缓存<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">关于我们<span>›</span></button>
+              <button type="button" data-demo-action="disabled" data-demo-message="此项仅作界面展示">意见反馈<span>›</span></button>
+            </div>
+          </section>
+        </main>
+        <nav class="main-tabs" aria-label="主导航">
+          <button type="button" data-go="today"><svg><use href="#icon-home" /></svg><span>今日</span></button>
+          <button type="button"><span class="badge">14</span><svg><use href="#icon-message" /></svg><span>讯息</span></button>
+          <button type="button" data-go="services"><svg><use href="#icon-grid" /></svg><span>服务</span></button>
+          <button type="button"><svg><use href="#icon-campus" /></svg><span>校园</span></button>
+          <button class="is-selected" type="button" data-go="profile"><svg><use href="#icon-person" /></svg><span>我的</span></button>
+        </nav>
+      </section>
+
+      <section class="screen profile-editor-screen" data-screen="profile-editor" hidden>
+        <header class="module-header profile-edit-header"><button type="button" data-go="profile" aria-label="返回">‹</button><h1>编辑</h1><button type="submit" form="profile-form">保存</button></header>
+        <form id="profile-form" class="profile-form">
+          <p class="profile-private-note">ⓘ 双击资料行即可修改，内容只保存在本机</p>
+          <div class="profile-edit-row avatar-edit-row"><span>头像</span><div class="avatar mini-profile-avatar"><svg viewBox="0 0 64 64"><circle cx="32" cy="23" r="10" fill="#efc49f" stroke="none"/><path d="M21 21c1-9 21-11 22 1-4-3-7-4-11-4-3 0-7 1-11 3Z" fill="#2d3442" stroke="none"/><path d="M17 59c1-15 9-22 15-22s14 7 15 22Z" fill="#293b86" stroke="none"/><path d="m25 38 7 9 7-9 4 4-11 11-11-11Z" fill="#f19b4b" stroke="none"/></svg></div><b>›</b></div>
+          <p class="photo-label">拖拽图片可排序</p>
+          <div class="photo-placeholder"><svg><use href="#icon-camera" /></svg><span>0/9</span></div>
+          <label class="profile-edit-row"><span>昵称</span><input name="nickname" maxlength="15" readonly /><small>15</small></label>
+          <label class="profile-edit-row signature-row"><span>签名</span><textarea name="signature" maxlength="40" rows="2" readonly placeholder="填啥总比没有强吧？"></textarea><small>40</small></label>
+          <label class="profile-edit-row"><span>性别</span><input name="gender" maxlength="8" readonly /><b>›</b></label>
+          <label class="profile-edit-row"><span>家乡</span><input name="hometown" maxlength="30" readonly /><b>›</b></label>
+          <label class="profile-edit-row"><span>生日</span><input name="birthday" maxlength="20" readonly /><b>›</b></label>
+          <label class="profile-edit-row"><span>姓名</span><input name="name" maxlength="20" required readonly /></label>
+          <label class="profile-edit-row"><span>学号</span><input name="studentId" inputmode="numeric" maxlength="24" required readonly /></label>
+          <label class="profile-edit-row"><span>学校</span><input name="school" maxlength="40" readonly /></label>
+          <label class="profile-edit-row"><span>院系</span><input name="college" maxlength="40" readonly /></label>
+          <label class="profile-edit-row"><span>专业</span><input name="major" maxlength="40" readonly /></label>
+          <label class="profile-edit-row"><span>年级</span><input name="grade" maxlength="12" readonly /></label>
+          <label class="profile-edit-row"><span>班级</span><input name="className" maxlength="30" readonly /></label>
+          <p class="form-error" id="profile-form-error" role="alert"></p>
+        </form>
+      </section>
+
+      <section class="screen leave-screen" data-screen="leave-home" hidden>
+        <header class="module-header"><button type="button" data-go="services" aria-label="返回">‹</button><h1>请假</h1><span></span></header>
+        <main class="leave-types">
+          <h2>发起</h2>
+          <button type="button"><span class="round-person">●</span><span>事假</span></button>
+          <button type="button"><span class="round-person">●</span><span>病假</span></button>
+          <button type="button"><span class="round-person">●</span><span>周末离校回家</span></button>
+          <button type="button"><span class="round-person">●</span><span>见习申请</span></button>
+          <p>没有更多数据了~</p>
+        </main>
+        <nav class="leave-tabs">
+          <button class="is-selected" type="button" data-go="leave-home"><svg><use href="#icon-briefcase" /></svg><span>我要请假</span></button>
+          <button type="button" data-go="records"><svg><use href="#icon-record" /></svg><span>请假记录</span></button>
+        </nav>
+      </section>
+
+      <section class="screen records-screen" data-screen="records" hidden>
+        <header class="module-header"><button type="button" data-go="leave-home" aria-label="返回">‹</button><h1>请假</h1><span></span></header>
+        <div class="records-toolbar"><button type="button" data-go="editor" aria-label="筛选与演示设置"><svg aria-hidden="true"><use href="#icon-filter" /></svg></button></div>
+        <main class="records-body">
+          <div class="records-summary">历史累计完成请假<span data-record-count></span>次，共计时长<span data-total-duration></span></div>
+          <div class="record-card-list" data-record-card-list></div>
+          <template id="record-card-template">
+            <button class="record-card" type="button">
+              <div class="record-heading"><strong data-record-title></strong><span data-field="status"></span></div>
+              <dl>
+                <div><dt>开始时间：</dt><dd data-date-field="startTime"></dd></div>
+                <div><dt>结束时间：</dt><dd data-date-field="endTime"></dd></div>
+                <div><dt>请假原因：</dt><dd data-field="reason"></dd></div>
+              </dl>
+              <div class="record-person"><span class="mini-avatar" aria-hidden="true"><svg><use href="#icon-mini-avatar" /></svg></span><strong data-field="name"></strong><time data-date-field="startTime"></time></div>
+            </button>
+          </template>
+          <p class="end-copy">没有更多数据了</p>
+        </main>
+        <nav class="leave-tabs">
+          <button type="button" data-go="leave-home"><svg><use href="#icon-briefcase" /></svg><span>我要请假</span></button>
+          <button class="is-selected" type="button" data-go="records"><svg><use href="#icon-record" /></svg><span>请假记录</span></button>
+        </nav>
+      </section>
+
+      <section class="screen detail-screen" data-screen="detail" hidden>
+        <header class="module-header detail-header">
+          <div class="detail-header-actions">
+            <button type="button" data-go="records" aria-label="返回"><svg><use href="#icon-back" /></svg></button>
+            <button class="close-button" type="button" data-go="records" aria-label="关闭"><svg><use href="#icon-close" /></svg></button>
+          </div>
+          <h1>请假详情</h1><span></span>
+        </header>
+        <main class="detail-body">
+          <div class="rule-tab">请假规则</div>
+          <div class="identity-card"><div class="avatar" aria-hidden="true"><svg viewBox="0 0 64 64"><circle cx="32" cy="23" r="10" fill="#efc49f" stroke="none"/><path d="M21 21c1-9 21-11 22 1-4-3-7-4-11-4-3 0-7 1-11 3Z" fill="#2d3442" stroke="none"/><path d="M17 59c1-15 9-22 15-22s14 7 15 22Z" fill="#293b86" stroke="none"/><path d="m25 38 7 9 7-9 4 4-11 11-11-11Z" fill="#f19b4b" stroke="none"/></svg></div><strong data-record-title></strong><span data-field="status"></span></div>
+          <section class="detail-card">
+            <h2>请假内容</h2>
+            <dl>
+              <div><dt>请假学生</dt><dd data-field="name"></dd></div>
+              <div><dt>开始时间</dt><dd data-date-field="startTime"></dd></div>
+              <div><dt>结束时间</dt><dd data-date-field="endTime"></dd></div>
+              <div><dt>请假时长</dt><dd data-duration></dd></div>
+              <div><dt>影响课程</dt><dd data-field="courseImpact"></dd></div>
+              <div><dt>请假原因</dt><dd data-field="reason"></dd></div>
+              <div><dt>证明材料</dt><dd>-</dd></div>
+              <div><dt>发起位置</dt><dd class="link-copy" data-field="origin"></dd></div>
+            </dl>
+          </section>
+          <section class="detail-card">
+            <h2>请假去向</h2>
+            <dl>
+              <div><dt>是否离校</dt><dd data-field="leaveSchool"></dd></div>
+              <div><dt>目的地</dt><dd data-field="destination"></dd></div>
+              <div><dt>详细地址</dt><dd data-field="address"></dd></div>
+              <div><dt>紧急联系人</dt><dd data-field="contact"></dd></div>
+              <div><dt>联系电话</dt><dd class="link-copy" data-field="contactPhone"></dd></div>
+              <div><dt>学生电话</dt><dd class="link-copy" data-field="studentPhone"></dd></div>
+            </dl>
+          </section>
+        </main>
+        <footer class="detail-actions">
+          <button class="more-action" type="button" data-demo-action="disabled"><svg><use href="#icon-more" /></svg><span>更多</span></button>
+          <button class="forward-action" type="button" data-demo-action="disabled">转发</button>
+        </footer>
+      </section>
+
+      <section class="screen editor-screen" data-screen="editor" hidden>
+        <header class="module-header"><button type="button" data-go="records" aria-label="返回">‹</button><h1>演示数据设置</h1><span></span></header>
+        <form id="record-form" class="editor-form">
+          <p class="form-note">这些内容只保存在当前手机，不会提交到学校。</p>
+          <label>姓名<input name="name" maxlength="20" required /></label>
+          <label>请假类型<select name="leaveType"><option>病假</option><option>事假</option><option>周末离校回家</option><option>见习申请</option></select></label>
+          <label>显示状态<select name="status"><option>已通过</option><option>已完成</option><option>进行中</option></select></label>
+          <label>开始时间<input name="startTime" type="datetime-local" required /></label>
+          <label>结束时间<input name="endTime" type="datetime-local" required /></label>
+          <label>申请时间<input name="applyTime" type="datetime-local" required /></label>
+          <label>请假原因<textarea name="reason" rows="3" maxlength="120"></textarea></label>
+          <label>影响课程<input name="courseImpact" maxlength="30" /></label>
+          <label>发起位置<input name="origin" maxlength="50" /></label>
+          <label>是否离校<select name="leaveSchool"><option>是</option><option>否</option></select></label>
+          <label>目的地<input name="destination" maxlength="60" /></label>
+          <label>详细地址<input name="address" maxlength="60" /></label>
+          <label>紧急联系人<input name="contact" maxlength="20" /></label>
+          <label>联系电话<input name="contactPhone" inputmode="tel" maxlength="20" /></label>
+          <label>学生电话<input name="studentPhone" inputmode="tel" maxlength="20" /></label>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <button class="save-button" type="submit">新增假条</button>
+          <button class="delete-button" type="button" hidden>删除该假条</button>
+        </form>
+      </section>
+
+      <div class="toast" id="toast" role="status" aria-live="polite">已保存到本机</div>
+    </div>
+
+    <svg class="svg-sprite" aria-hidden="true">
+      <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+      <symbol id="icon-scan" viewBox="0 0 24 24"><path d="M4 9V4h5M15 4h5v5M20 15v5h-5M9 20H4v-5"/></symbol>
+      <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-7 9 7v9h-6v-6H9v6H3z"/></symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24"><path d="M4 4h16v12H8l-4 4z"/><path d="M8 9h8M8 13h5"/></symbol>
+      <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+      <symbol id="icon-campus" viewBox="0 0 24 24"><path d="M4 20V8l6-4v16M10 20h10V11l-5-3v12M2 20h20"/></symbol>
+      <symbol id="icon-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21c0-5 3-8 7-8s7 3 7 8"/></symbol>
+      <symbol id="icon-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="16" height="15" rx="2"/><path d="M7 2v6M15 2v6M3 10h16"/><circle cx="18" cy="18" r="4"/><path d="M18 16v2l1 1"/></symbol>
+      <symbol id="icon-suitcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V4h6v3M8 20v2M16 20v2"/></symbol>
+      <symbol id="icon-card" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="9" r="2"/><path d="M8 16c1-3 7-3 8 0"/></symbol>
+      <symbol id="icon-leave" viewBox="0 0 24 24"><path d="M4 21V9l8-6 8 6v12H4z"/><circle cx="17" cy="17" r="4"/><path d="m15 17 1 1 3-3"/></symbol>
+      <symbol id="icon-notice" viewBox="0 0 24 24"><path d="m3 11 13-6v14L3 13zM16 9h4v6h-4M6 14v6h4v-4"/></symbol>
+      <symbol id="icon-id" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M6 16c1-3 5-3 6 0M14 9h4M14 13h4"/></symbol>
+      <symbol id="icon-sign" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="m8 12 3 3 6-7"/></symbol>
+      <symbol id="icon-dorm" viewBox="0 0 24 24"><path d="M3 10 12 3l9 7v11H3z"/><path d="M8 15c2-3 6-3 8 0-2 3-6 3-8 0z"/></symbol>
+      <symbol id="icon-collect" viewBox="0 0 24 24"><rect x="7" y="3" width="13" height="17" rx="2"/><path d="M4 7v14h12M10 8h7M10 12h7M10 16h4"/></symbol>
+      <symbol id="icon-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="1"/><path d="M9 7V4h6v3M3 12h18M10 12v3h4v-3"/></symbol>
+      <symbol id="icon-record" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M8 21h8"/></symbol>
+      <symbol id="icon-more" viewBox="0 0 24 24"><path d="M4 6h16M7 11h10M10 16h4"/></symbol>
+      <symbol id="icon-back" viewBox="0 0 24 24"><path d="m15 4-8 8 8 8"/></symbol>
+      <symbol id="icon-close" viewBox="0 0 24 24"><path d="M5 5l14 14M19 5 5 19"/></symbol>
+      <symbol id="icon-filter" viewBox="0 0 24 24"><path d="M3 5h18l-7 8v6l-4 2v-8z"/><path d="M16 15h4M16 18h3"/></symbol>
+      <symbol id="icon-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h3v3h-3zM18 14h3v7h-3M14 19h2v2h-2"/></symbol>
+      <symbol id="icon-hex" viewBox="0 0 24 24"><path d="m12 2 9 5v10l-9 5-9-5V7z"/><circle cx="12" cy="12" r="4"/></symbol>
+      <symbol id="icon-camera" viewBox="0 0 24 24"><path d="M4 7h4l2-3h4l2 3h4v13H4z"/><circle cx="12" cy="13" r="4"/></symbol>
+      <symbol id="icon-mini-avatar" viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.4" fill="currentColor" stroke="none"/><path d="M4.5 19c.35-4.2 2.2-6.2 5.5-6.2s5.15 2 5.5 6.2Z" fill="currentColor" stroke="none"/><path d="M18 10.5v5M15.5 13h5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    </svg>
+    <script type="module" src="./src/app.mjs"></script>
+  </body>
+</html>

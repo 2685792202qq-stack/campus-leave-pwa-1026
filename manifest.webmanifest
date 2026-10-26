@@ -1,0 +1,18 @@
+{
+  "name": "校园请假演示",
+  "short_name": "校园演示",
+  "description": "仅保存在本机的请假界面演示",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3250e6",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
